@@ -1,0 +1,6 @@
+node_modules
+bower_components
+vendor
+src/index.css
+build/index.css
+.idea/
