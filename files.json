@@ -7,5 +7,10 @@
 
     "app/modules/test-module/test-module.js",
     "app/modules/test-module/test-module-config.js",
-    "app/modules/test-module/test-module-service.js"
+    "app/modules/test-module/test-module-service.js",
+    
+    "app/modules/slideshow/slideshow.js",
+    "app/modules/slideshow/slideshow-config.js",
+    "app/modules/slideshow/slideshow-service.js"
+    
 ]
