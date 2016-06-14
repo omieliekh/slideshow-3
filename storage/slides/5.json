@@ -1,0 +1,22 @@
+[
+    {
+        "image": "1.jpg",
+        "text": "hello nature",
+        "text-position": "bottom"
+    },
+    {
+        "image": "2.jpg",
+        "text": "",
+        "text-position": "bottom"
+    },
+    {
+        "image": "3.jpg",
+        "text": "nature 3",
+        "text-position": "bottom"
+    },
+    {
+        "image": "",
+        "text": "zxcvbnm",
+        "text-position": "bottom"
+    }
+]

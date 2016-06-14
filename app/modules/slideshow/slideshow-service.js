@@ -9,10 +9,10 @@ function (
     $http,
     $parse,
     $interpolate,
-    slideshowConfig
+    config
 ) {
     this.getConfig = function (path) {
-        return $parse(path)(slideshowConfig);
+        return angular.deepClone( $parse(path)(config) );
     };
 
     this.getSlideList = function (slideId) {

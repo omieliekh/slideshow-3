@@ -249,8 +249,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6124,7 +6124,7 @@ button.close {
 }
 .slideshow .image-item {
   width: 100%;
-  height: 500px;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -6132,6 +6132,7 @@ button.close {
 }
 .slideshow .image-item .back-btn,
 .slideshow .image-item .forward-btn {
+  cursor: pointer;
   position: absolute;
   width: 25%;
   height: 100%;
@@ -6141,4 +6142,73 @@ button.close {
 }
 .slideshow .image-item .forward-btn {
   right: 0;
+}
+.slideshow-edit .glyphicon {
+  color: #eeeeee;
+  text-shadow: 0 1px 1px #222222;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.slideshow-edit .initial-add-btn {
+  font-size: 4rem;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+  line-height: 150px;
+  background-color: #eeeeee;
+}
+.slideshow-edit .image-item {
+  width: 200px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+}
+.slideshow-edit .image-item .slide-number {
+  background: rgba(238, 238, 238, 0.75);
+  padding: 1px 5px;
+  font-weight: bold;
+}
+.slideshow-edit .image-item .glyphicon-edit {
+  position: absolute;
+  top: 35px;
+  left: 51.66666667px;
+  height: auto;
+  width: auto;
+}
+.slideshow-edit .image-item .glyphicon-trash {
+  position: absolute;
+  top: 35px;
+  left: 118.33333333px;
+  height: auto;
+  width: auto;
+}
+.slideshow-edit .image-item .glyphicon-plus {
+  position: absolute;
+  left: calc(100% + 5px);
+  top: 60px;
+}
+.slideshow-edit .image-item .image-text {
+  position: absolute;
+  top: 85px;
+  left: 5px;
+  width: calc(100% - 10px);
+  padding: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  opacity: 0.9;
+  font-weight: bold;
+}
+.slideshow-edit .image-item:not(:hover) .image-text {
+  opacity: 1;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: red;
+  text-shadow: 0 1px 1px black;
 }

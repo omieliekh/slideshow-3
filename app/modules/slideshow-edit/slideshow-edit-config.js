@@ -1,4 +1,4 @@
-angular.module('slideshow')
+angular.module('slideshowEdit')
 
 .config([
     '$locationProvider',
@@ -7,14 +7,20 @@ function (
     $locationProvider,
     $stateProvider
 ) {
-    $stateProvider.state('slideshow', {
-        url: "/slideshow/:slideId",
-        controller: 'slideshowController',
-        templateUrl: "app/modules/slideshow/slideshow.html"
+    $stateProvider.state('slideshowEdit', {
+        url: "/slideshow-edit/:slideId",
+        controller: 'slideshowEditController',
+        templateUrl: "app/modules/slideshow-edit/slideshow-edit.html"
     });
 
 }])
 
-.constant("slideshowConfig", {
-    pathGetItems: '/api/slideshow/{{slideId}}'
+.constant("slideshowEditConfig", {
+    slideItems: '/api/slideshow/{{slideId}}',
+
+    defaultSlideItem: {
+        "image": "", // image name
+        "text": "",
+        "text-position": "bottom" // "top" | "bottom"
+    }
 });

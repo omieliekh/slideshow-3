@@ -1,43 +1,44 @@
-angular.module('slideshow', []).controller('slideshowController', [
+angular.module('slideshowEdit', []).controller('slideshowEditController', [
     '$scope',
     '$stateParams',
-    'slideshowService',
+    'appService',
+    'slideshowEditService',
 function (
     $scope,
     $stateParams,
-    slideshowService
+    appService,
+    service
 ) {
-    console.log('$stateParams: ', $stateParams);
-    
     $scope.stateParams = $stateParams;
     $scope.activeImageIdx = 0;
 
     var initialize = function () {
+        $scope.uploadedImagesPath = appService.getUploadedImagesPath();
         getSlideList();
     };
 
     var getSlideList = function () {
-        slideshowService.getSlideList($stateParams.slideId).then(function (slideList) {
+        service.getSlideList($stateParams.slideId).then(function (slideList) {
             $scope.slideList = slideList;
 
         });
     };
 
-    $scope.nextImage = function () {
-        if ($scope.activeImageIdx + 1 <= $scope.slideList.length - 1){
-            $scope.activeImageIdx++;
-        }
-
-        console.log('$scope.activeImageIdx: ', $scope.activeImageIdx);
+    $scope.save = function () {
+        service.save($stateParams.slideId, $scope.slideList);
     };
 
-    $scope.prevImage = function () {
-        if ($scope.activeImageIdx - 1 >= 0){
-            $scope.activeImageIdx--;
-        }
+    $scope.addSlide = function (prevSlideIdx) {
+        var item = service.getDefSlideItem();
 
-        console.log('$scope.activeImageIdx: ', $scope.activeImageIdx);
+        $scope.slideList.splice(prevSlideIdx + 1, 0, item);
     };
+
+    $scope.removeSlide = function (slideIdx) {
+        $scope.slideList.splice(slideIdx, 1);
+    };
+
+
 
     initialize();
 

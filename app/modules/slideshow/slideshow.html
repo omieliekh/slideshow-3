@@ -6,7 +6,7 @@
         ng-repeat="slide in slideList"
         ng-show="$index == activeImageIdx"
         ng-style="{
-            'background-image': 'url('+slide+')'
+            'background-image': 'url('+uploadedImagesPath + slide.image+')'
         }"
     >
         <div class="back-btn" ng-click="prevImage()"></div>

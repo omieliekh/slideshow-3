@@ -1,16 +1,19 @@
 angular.module('slideshow', []).controller('slideshowController', [
     '$scope',
     '$stateParams',
+    'appService',
     'slideshowService',
 function (
     $scope,
     $stateParams,
+    appService,
     slideshowService
 ) {
     console.log('$stateParams: ', $stateParams);
     
     $scope.stateParams = $stateParams;
     $scope.activeImageIdx = 0;
+    $scope.uploadedImagesPath = appService.getUploadedImagesPath();
 
     var initialize = function () {
         getSlideList();

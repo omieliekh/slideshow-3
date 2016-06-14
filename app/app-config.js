@@ -11,4 +11,8 @@ function (
 
     $urlRouterProvider.otherwise("/");
 
-}]);
+}])
+
+.constant("appConfig", {
+    uploadedImagesPath: '/images/uploaded/'
+});

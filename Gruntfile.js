@@ -4,23 +4,23 @@ module.exports = function(grunt) {
     //grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-express-server');
 
-    // main config object
     grunt.initConfig({
-        // task for watching on changed files
         watch: {
-            styles: {
+            server: {
+                files: ['server.js'],
+                tasks:  ['express:dev'],
+                options: {
+                    spawn: false
+                }
+            },
+            less: {
                 files: ['**/*.less'],
                 tasks: ['less:dev'],
                 options: {
-                    debounceDelay: 1,
                     interrupt: true
-                }
-            },
-            config: {
-                files: ['Gruntfile.js'],
-                options: {
-                    reload: true
+
                 }
             }
         },
@@ -36,11 +36,23 @@ module.exports = function(grunt) {
                     "css/main.css": "less/main.less" // destination file and source file
                 }
             }
+        },
+
+        express: {
+            options: {
+                port: 8333
+            },
+            dev: {
+                options: {
+                    script: 'server.js'
+                }
+            }
         }
     });
 
     grunt.registerTask('default', [
         'less:dev',
+        'express:dev',
         'watch'
     ]);
 };

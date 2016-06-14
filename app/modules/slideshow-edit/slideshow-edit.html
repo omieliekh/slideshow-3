@@ -1,15 +1,34 @@
-<div class="slideshow">
-    <h3>Slideshow goes here {{stateParams.slideId}}</h3>
+<div class="slideshow-edit">
+    <div class="row">
+        <div class="col-sm-10">
+            <h3>{{stateParams.slideId}}</h3>
+        </div>
+        <div class="col-sm-2">
+            <button class="h3 btn btn-primary btn-block" ng-click="save()">Save</button>
+        </div>
+    </div>
+
+    <i
+        ng-show="!slideList.length"
+        class="glyphicon glyphicon-plus initial-add-btn"
+        ng-click="addSlide(0)"
+    ></i>
 
     <div
-        class="image-item"
         ng-repeat="slide in slideList"
-        ng-show="$index == activeImageIdx"
+        class="image-item"
         ng-style="{
-            'background-image': 'url('+slide+')'
+            'background-image': 'url('+uploadedImagesPath + slide.image+')'
         }"
     >
-        <div class="back-btn" ng-click="prevImage()"></div>
-        <div class="forward-btn" ng-click="nextImage()"></div>
+        <span class="slide-number">{{$index + 1}}</span>
+        <i class="glyphicon glyphicon-edit"></i>
+        <i class="glyphicon glyphicon-trash" ng-click="removeSlide($index)"></i>
+        <i class="glyphicon glyphicon-plus" ng-click="addSlide($index)"></i>
+        <input
+            type="text"
+            class="form-control input-sm image-text"
+            ng-model="slide.text"
+        >
     </div>
 </div>

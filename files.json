@@ -2,8 +2,10 @@
     "node_modules/angular/angular.js",
     "node_modules/angular-ui-router/release/angular-ui-router.js",
 
+    "app/app-mixins.js",
     "app/app.js",
     "app/app-config.js",
+    "app/app-service.js",
 
     "app/modules/test-module/test-module.js",
     "app/modules/test-module/test-module-config.js",
@@ -11,6 +13,10 @@
     
     "app/modules/slideshow/slideshow.js",
     "app/modules/slideshow/slideshow-config.js",
-    "app/modules/slideshow/slideshow-service.js"
+    "app/modules/slideshow/slideshow-service.js",
+
+    "app/modules/slideshow-edit/slideshow-edit.js",
+    "app/modules/slideshow-edit/slideshow-edit-config.js",
+    "app/modules/slideshow-edit/slideshow-edit-service.js"
     
 ]
