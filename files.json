@@ -10,6 +10,12 @@
     "app/app-config.js",
     "app/app-service.js",
 
+    "app/directives/header/header.js",
+
+    "app/modules/slideshow-list/slideshow-list.js",
+    "app/modules/slideshow-list/slideshow-list-config.js",
+    "app/modules/slideshow-list/slideshow-list-service.js",
+
     "app/modules/slideshow/slideshow.js",
     "app/modules/slideshow/slideshow-config.js",
     "app/modules/slideshow/slideshow-service.js",

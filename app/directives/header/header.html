@@ -1,0 +1,9 @@
+<div class="header">
+    <a
+        ng-repeat="link in links"
+        href="{{link.href}}"
+        ng-class="{
+            'active': link.href == url
+        }"
+    >{{link.title}}</a>
+</div>

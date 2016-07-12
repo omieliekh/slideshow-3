@@ -1,19 +1,19 @@
 {
-	"title": "Test slides",
+	"title": "Some title frfrfrfrfrfrfrf",
 	"slides": [
 		{
-			"image": "Family.jpg",
-			"text": "Family",
+			"image": "3.jpg",
+			"text": "Nature",
 			"text-position": "bottom"
 		},
 		{
 			"image": "audi_PNG1736.png",
-			"text": "Car",
+			"text": "Car 11111111111111",
 			"text-position": "bottom"
 		},
 		{
 			"image": "3.jpg",
-			"text": "Nature",
+			"text": "hello",
 			"text-position": "bottom"
 		},
 		{
@@ -23,7 +23,7 @@
 		},
 		{
 			"image": "thank-you-road-sign.jpg",
-			"text": "Sign",
+			"text": "Sign 2 df sddsf",
 			"text-position": "bottom"
 		}
 	]

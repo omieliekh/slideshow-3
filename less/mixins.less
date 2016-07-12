@@ -17,3 +17,33 @@
     .box-shadow-sm();
   }
 }
+
+.absolute-fit(@indent: 0px){
+  position: absolute;
+  top: @indent;
+  left: @indent;
+  right: @indent;
+  bottom: @indent;
+}
+
+.border-on-hover(@border-width: 3px, @indent: -1px){
+  &:hover{
+    &:after{
+      .absolute-fit(@indent);
+      content: ' ';
+      border: @border-width solid @brand-primary;
+    }
+  }
+}
+
+.image-item-text(@image-item-height){
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: (@image-item-height/30) 0;
+  text-align: center;
+  font-size: @image-item-height/7;
+  font-weight: bold;
+  line-height: 1;
+}

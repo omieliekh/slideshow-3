@@ -22,6 +22,7 @@
   }
 
   .initial-add-btn{
+    color: @brand-primary;
     font-size: 4rem;
     width: @image-item-width;
     height: @image-item-height;
@@ -36,7 +37,6 @@
     background: @gray-lighter no-repeat center center;
     background-size: contain;
     position: relative;
-    //border: 1px solid @gray-lighter;
     display: inline-block;
     margin-left: 40px;
     margin-bottom: 10px;
@@ -81,16 +81,9 @@
     }
 
     .image-text{
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      .image-item-text(@image-item-height);
+
       height: @image-item-height/15 + @image-item-height/7;
-      padding: (@image-item-height/30) 0;
-      text-align: center;
-      font-size: @image-item-height/7;
-      font-weight: bold;
-      line-height: 1;
     }
 
     &:hover{
@@ -109,7 +102,6 @@
         border: none;
         box-shadow: none;
         color: @red;
-        //text-shadow: 0 1px 1px @gray-darker;
       }
     }
 

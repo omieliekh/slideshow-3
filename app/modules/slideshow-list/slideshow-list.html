@@ -1,0 +1,18 @@
+<div class="slideshow-list">
+    <i
+        class="slideshow glyphicon glyphicon-plus initial-add-btn"
+        ng-click="addSlide(0)"
+    ></i>
+
+    <div
+        ng-repeat="slide in slideList"
+        class="slideshow"
+        ng-style="{
+            'background-image': 'url('+uploadedImagesPath + slide.image+')'
+        }"
+    >
+        <a href="/slideshow/{{slide.id}}">
+            <div class="image-text">{{slide.title}}</div>
+        </a>
+    </div>
+</div>
