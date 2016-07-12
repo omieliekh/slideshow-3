@@ -1,22 +1,30 @@
-[
-    {
-        "image": "1.jpg",
-        "text": "hello nature",
-        "text-position": "bottom"
-    },
-    {
-        "image": "2.jpg",
-        "text": "",
-        "text-position": "bottom"
-    },
-    {
-        "image": "3.jpg",
-        "text": "nature 3",
-        "text-position": "bottom"
-    },
-    {
-        "image": "",
-        "text": "zxcvbnm",
-        "text-position": "bottom"
-    }
-]
+{
+	"title": "Some title frfrfrfrfrfrfrf",
+	"slides": [
+		{
+			"image": "3.jpg",
+			"text": "Nature",
+			"text-position": "bottom"
+		},
+		{
+			"image": "audi_PNG1736.png",
+			"text": "Car 11111111111111",
+			"text-position": "bottom"
+		},
+		{
+			"image": "3.jpg",
+			"text": "hello",
+			"text-position": "bottom"
+		},
+		{
+			"image": "men_at_work.png",
+			"text": "Sign",
+			"text-position": "bottom"
+		},
+		{
+			"image": "thank-you-road-sign.jpg",
+			"text": "Sign 2 df sddsf",
+			"text-position": "bottom"
+		}
+	]
+}

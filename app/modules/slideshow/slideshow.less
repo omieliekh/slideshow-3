@@ -1,10 +1,16 @@
 .slideshow{
+  @image-item-height: 700px;
+
+  .slideshow-title{
+    margin-top: 0;
+    text-align: center;
+  }
+
   .image-item{
     width: 100%;
-    height: 700px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    height: @image-item-height;
+    background: @gray-lighter no-repeat center center;
+    background-size: contain;
     position: relative;
 
     .back-btn,
@@ -14,6 +20,21 @@
       width: 25%;
       height: 100%;
       //background-color: rgba(255, 128, 128, 0.25);
+    }
+
+    .image-text{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: (@image-item-height/30) 0;
+      text-align: center;
+      font-size: @image-item-height/7;
+      font-weight: bold;
+      line-height: 1;
+      color: @red;
+      text-shadow: 0 1px 1px @gray-darker;
+      background: @gray-lighter-alpha-25;
     }
 
     .back-btn{

@@ -1,34 +1,44 @@
 <div class="slideshow-edit">
-    <div class="row">
+    <div class="row indent-bottom">
         <div class="col-sm-10">
-            <h3>{{stateParams.slideId}}</h3>
+            <!--<h3>{{slideList.title}}</h3>-->
+            <input
+                class="form-control input-lg slide-title"
+                type="text"
+                ng-model="slideList.title"
+            >
         </div>
         <div class="col-sm-2">
-            <button class="h3 btn btn-primary btn-block" ng-click="save()">Save</button>
+            <button class="btn btn-primary btn-block" ng-click="save()">Save</button>
         </div>
     </div>
 
     <i
-        ng-show="!slideList.length"
+        ng-if="!slideList.slides.length"
         class="glyphicon glyphicon-plus initial-add-btn"
         ng-click="addSlide(0)"
     ></i>
 
-    <div
-        ng-repeat="slide in slideList"
-        class="image-item"
-        ng-style="{
+    <div>
+        <div
+            ng-repeat="slide in slideList.slides"
+            class="image-item"
+            ng-style="{
             'background-image': 'url('+uploadedImagesPath + slide.image+')'
         }"
-    >
-        <span class="slide-number">{{$index + 1}}</span>
-        <i class="glyphicon glyphicon-edit"></i>
-        <i class="glyphicon glyphicon-trash" ng-click="removeSlide($index)"></i>
-        <i class="glyphicon glyphicon-plus" ng-click="addSlide($index)"></i>
-        <input
-            type="text"
-            class="form-control input-sm image-text"
-            ng-model="slide.text"
         >
+            <span class="slide-number">{{$index + 1}}</span>
+            <i class="glyphicon glyphicon-edit" ng-click="openGallery(slide)"></i>
+            <i class="glyphicon glyphicon-trash" ng-click="removeSlide($index)"></i>
+            <input
+                type="text"
+                class="form-control input-sm image-text"
+                ng-model="slide.text"
+            >
+
+            <i class="glyphicon glyphicon-plus" ng-click="addSlide($index)"></i>
+
+            <i ng-show="$last" class="glyphicon glyphicon-plus last-plus" ng-click="addSlide($index + 1)"></i>
+        </div>
     </div>
 </div>

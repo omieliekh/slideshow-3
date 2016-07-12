@@ -14,5 +14,6 @@ function (
 }])
 
 .constant("appConfig", {
+    uploadImagesPath: '/images/upload',
     uploadedImagesPath: '/images/uploaded/'
 });

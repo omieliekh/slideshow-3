@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
             server: {
-                files: ['server.js'],
+                files: ['server.js', 'middlewares/*.js'],
                 tasks:  ['express:dev'],
                 options: {
                     spawn: false

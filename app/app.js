@@ -1,6 +1,6 @@
 angular.module('app', [
     'ui.router',
-    'testModule',
+    'ui.bootstrap',
     'slideshow',
     'slideshowEdit'
 ]);

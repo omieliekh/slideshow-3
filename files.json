@@ -1,22 +1,23 @@
 [
+    "node_modules/jquery/dist/jquery.min.js",
     "node_modules/angular/angular.js",
     "node_modules/angular-ui-router/release/angular-ui-router.js",
+    "node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js",
+    "node_modules/ng-file-upload/dist/ng-file-upload.js",
 
     "app/app-mixins.js",
     "app/app.js",
     "app/app-config.js",
     "app/app-service.js",
 
-    "app/modules/test-module/test-module.js",
-    "app/modules/test-module/test-module-config.js",
-    "app/modules/test-module/test-module-service.js",
-    
     "app/modules/slideshow/slideshow.js",
     "app/modules/slideshow/slideshow-config.js",
     "app/modules/slideshow/slideshow-service.js",
 
     "app/modules/slideshow-edit/slideshow-edit.js",
     "app/modules/slideshow-edit/slideshow-edit-config.js",
-    "app/modules/slideshow-edit/slideshow-edit-service.js"
-    
+    "app/modules/slideshow-edit/slideshow-edit-service.js",
+
+    "app/modules/gallery-modal/gallery-modal-service.js",
+    "app/modules/gallery-modal/gallery-modal.js"
 ]

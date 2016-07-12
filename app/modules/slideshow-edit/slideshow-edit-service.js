@@ -32,12 +32,8 @@ function (
     this.getSlideList = function (slideId) {
         var path = this.getPath(slideId);
 
-        console.log('path: ', path);
-
         return $http.get(path).then(function (res) {
-            if (res.data && angular.isArray(res.data)){
-                return res.data;
-            }
+            return res.data;
         });
     };
     

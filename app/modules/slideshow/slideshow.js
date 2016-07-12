@@ -27,7 +27,7 @@ function (
     };
 
     $scope.nextImage = function () {
-        if ($scope.activeImageIdx + 1 <= $scope.slideList.length - 1){
+        if ($scope.activeImageIdx + 1 <= $scope.slideList.slides.length - 1){
             $scope.activeImageIdx++;
         }
 
