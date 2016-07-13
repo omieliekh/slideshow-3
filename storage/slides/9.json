@@ -1,0 +1,15 @@
+{
+	"title": "Slideshow title 3333",
+	"slides": [
+		{
+			"image": "tv.jpg",
+			"text": "",
+			"text-position": "bottom"
+		},
+		{
+			"image": "2.jpg",
+			"text": "",
+			"text-position": "bottom"
+		}
+	]
+}

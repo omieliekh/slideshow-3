@@ -2,18 +2,19 @@ angular.module('slideshowList', [
     'ngFileUpload'
 ]).controller('slideshowListController', [
     '$scope',
-    '$timeout',
-    '$uibModal',
+    '$stateParams',
     'appService',
     'slideshowListService',
 function (
     $scope,
-    $timeout,
-    $uibModal,
+    $stateParams,
     appService,
     service
 ) {
     var initialize = function () {
+        $scope.stateParams = $stateParams;
+        $scope.isView = $stateParams.mode == 'view';
+        $scope.isEdit = $stateParams.mode == 'edit';
         $scope.uploadedImagesPath = appService.getUploadedImagesPath();
         getList();
     };

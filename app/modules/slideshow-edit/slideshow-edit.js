@@ -3,6 +3,7 @@ angular.module('slideshowEdit', [
 ]).controller('slideshowEditController', [
     '$scope',
     '$timeout',
+    '$location',
     '$uibModal',
     '$stateParams',
     'appService',
@@ -10,6 +11,7 @@ angular.module('slideshowEdit', [
 function (
     $scope,
     $timeout,
+    $location,
     $uibModal,
     $stateParams,
     appService,
@@ -32,7 +34,11 @@ function (
     };
 
     $scope.save = function () {
-        service.save($stateParams.slideId, $scope.slideList);
+        service.save($stateParams.slideId, $scope.slideList).then(function (res) {
+            if (!$stateParams.slideId){
+                $location.url('/slideshow-edit/'+res.slideId);
+            }
+        });
     };
 
     $scope.addSlide = function (idx) {

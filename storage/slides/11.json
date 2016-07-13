@@ -1,0 +1,30 @@
+{
+	"title": "Animals",
+	"slides": [
+		{
+			"image": "IMG_5999.JPG",
+			"text": "Snake",
+			"text-position": "bottom"
+		},
+		{
+			"image": "IMG_6001.JPG",
+			"text": "Birds",
+			"text-position": "bottom"
+		},
+		{
+			"image": "IMG_6130.JPG",
+			"text": "Monkey",
+			"text-position": "bottom"
+		},
+		{
+			"image": "IMG_6138.JPG",
+			"text": "Monkeys",
+			"text-position": "bottom"
+		},
+		{
+			"image": "IMG_6125.JPG",
+			"text": "The Himalayan marmot",
+			"text-position": "bottom"
+		}
+	]
+}

@@ -18,6 +18,11 @@ function (
 .constant("slideshowEditConfig", {
     slideItems: '/api/slideshow/{{slideId}}',
 
+    defaultSlideshowItem: {
+        "title": "Slideshow title",
+        "slides": []
+    },
+
     defaultSlideItem: {
         "image": "", // image name
         "text": "",

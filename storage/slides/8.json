@@ -1,0 +1,20 @@
+{
+	"title": "Slideshow title",
+	"slides": [
+		{
+			"image": "audi_PNG1736.png",
+			"text": "",
+			"text-position": "bottom"
+		},
+		{
+			"image": "1.jpg",
+			"text": "",
+			"text-position": "bottom"
+		},
+		{
+			"image": "tv.jpg",
+			"text": "",
+			"text-position": "bottom"
+		}
+	]
+}

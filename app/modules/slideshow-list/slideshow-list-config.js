@@ -8,7 +8,7 @@ angular.module('slideshowList')
         $stateProvider
     ) {
         $stateProvider.state('slideshowList', {
-            url: "/slideshow-list",
+            url: "/slideshow-list/:mode",
             controller: 'slideshowListController',
             templateUrl: "app/modules/slideshow-list/slideshow-list.html"
         });

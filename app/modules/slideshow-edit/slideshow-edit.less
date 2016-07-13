@@ -15,14 +15,13 @@
   }
 
   .glyphicon{
-    color: @gray-lighter;
     text-shadow: 0 1px 1px @gray-darker;
     font-size: 3rem;
     cursor: pointer;
+    color: @brand-primary;
   }
 
   .initial-add-btn{
-    color: @brand-primary;
     font-size: 4rem;
     width: @image-item-width;
     height: @image-item-height;
@@ -51,7 +50,7 @@
       font-weight: bold;
     }
 
-    .glyphicon-edit{
+    .glyphicon-picture{
       position: absolute;
       top: @image-item-height/3 - 30px/2;
       left: @image-item-width/3 - 30px/2;
@@ -87,7 +86,7 @@
     }
 
     &:hover{
-      .glyphicon-edit,
+      .glyphicon-picture,
       .glyphicon-trash{
         display: block;
       }

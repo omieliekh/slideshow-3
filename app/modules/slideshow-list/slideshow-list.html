@@ -1,8 +1,9 @@
 <div class="slideshow-list">
-    <i
+    <a
+        ng-if="isEdit"
         class="slideshow glyphicon glyphicon-plus initial-add-btn"
-        ng-click="addSlide(0)"
-    ></i>
+        href="/slideshow-edit/"
+    ></a>
 
     <div
         ng-repeat="slide in slideList"
@@ -11,7 +12,13 @@
             'background-image': 'url('+uploadedImagesPath + slide.image+')'
         }"
     >
-        <a href="/slideshow/{{slide.id}}">
+        <a
+            href="/slideshow{{isEdit ? '-edit' : ''}}/{{slide.id}}"
+        >
+            <i
+                ng-if="isEdit"
+                class="glyphicon glyphicon-edit ghost-icon"
+            ></i>
             <div class="image-text">{{slide.title}}</div>
         </a>
     </div>

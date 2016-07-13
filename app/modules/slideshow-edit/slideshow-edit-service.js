@@ -15,12 +15,12 @@ function (
         return angular.deepClone( $parse(path)(config) );
     };
 
+    this.getDefSlideshowItem = function () {
+        return this.getConfig('defaultSlideshowItem');
+    };
+
     this.getDefSlideItem = function () {
-        var result = this.getConfig('defaultSlideItem');
-
-        console.log('items equal: ', result == config.defaultSlideItem);
-
-        return result;
+        return this.getConfig('defaultSlideItem');
     };
 
     this.getPath = function (slideId) {
@@ -30,7 +30,14 @@ function (
     };
 
     this.getSlideList = function (slideId) {
-        var path = this.getPath(slideId);
+        var
+            defer = $q.defer(),
+            path = this.getPath(slideId);
+
+        if (!slideId){
+            defer.resolve( this.getDefSlideshowItem() );
+            return defer.promise;
+        }
 
         return $http.get(path).then(function (res) {
             return res.data;
@@ -40,7 +47,9 @@ function (
     this.save = function (slideId, slideList) {
         var path = this.getPath(slideId);
 
-        return $http.put(path, slideList);
+        return $http[slideId ? 'put' : 'post'](path, slideList).then(function (res) {
+            return res.data;
+        });
     }
 
 

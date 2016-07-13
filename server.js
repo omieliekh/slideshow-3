@@ -5,6 +5,8 @@ var
     bodyParser = require('body-parser'),
     _ = require('underscore'),
 
+    IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
+    PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ROOT_DIR = __dirname + '/',
     STORAGE_DIR = ROOT_DIR + 'storage',
 
@@ -44,6 +46,6 @@ for (var i in paths){
 //    }
 //});
 
-server.listen(8333, function () {
-    console.log('Server is running under localhost:8333 ...');
+server.listen(PORT, IP_ADDRESS, function () {
+    console.log('%s: Node server started on %s:%d ...', new Date(), IP_ADDRESS, PORT);
 });

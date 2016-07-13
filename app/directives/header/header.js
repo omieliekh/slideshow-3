@@ -8,8 +8,8 @@ function(
     $location
 ) {
     var links = [
-        { href: '/slideshow-list', title: 'List' },
-        { href: '/slideshow-edit/5', title: 'slideshow-edit/5' }
+        { href: '/slideshow-list/view', title: 'View Mode' },
+        { href: '/slideshow-list/edit', title: 'Edit Mode' }
     ];
 
     return {

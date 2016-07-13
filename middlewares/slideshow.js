@@ -35,7 +35,7 @@ module.exports = {
             }
         }
     },
-    '/api/slideshow/:slideId' : {
+    '/api/slideshow/:slideId?' : {
         'get': function (req, res) {
             console.log('run /api/slideshow/:slideId');
 
@@ -47,6 +47,31 @@ module.exports = {
             list = fs.readFileSync(file, 'utf-8');
 
             res.send(list);
+        },
+
+        'post': function (req, res) {
+            var
+                slideId = getNextSlideId(),
+                file = SLIDES_DIR + slideId + '.json';
+
+            function getNextSlideId(){
+                var files = fs.readdirSync(SLIDES_DIR);
+
+                var indexes = files.map(function (filename) {
+                    return parseInt(filename.replace(/\.json$/, '') );
+                });
+
+                return Math.max.apply(null, indexes) + 1;
+            }
+
+            console.log('/api/slideshow/ POST');
+
+            fs.writeFileSync(file, JSON.stringify(req.body, null, '\t'), 'utf-8');
+
+            res.send({
+                success: true,
+                slideId: slideId
+            });
         },
 
         'put': function (req, res) {
