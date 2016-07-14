@@ -6,8 +6,8 @@
         type="file"
         ngf-select="uploadFiles($file, $invalidFiles, slide)"
         accept="image/*"
-        ngf-max-height="3000"
-        ngf-max-size="10MB"
+        ngf-max-height="5000"
+        ngf-max-size="15MB"
 
         class="glyphicon glyphicon-plus blank-item"
     ></i>
@@ -15,6 +15,7 @@
     <div
         ng-repeat="filename in files"
         ng-click="selectFile(filename)"
+        ng-dblclick="choose()"
         class="gallery-item"
         ng-class="{
             'framed': selectedFilename == filename
