@@ -5,3 +5,5 @@ src/index.css
 build/index.css
 .idea/
 /css/main.css
+/images/uploaded/*
+/storage/*
