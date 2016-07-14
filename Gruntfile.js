@@ -55,4 +55,8 @@ module.exports = function(grunt) {
         'express:dev',
         'watch'
     ]);
+
+    grunt.registerTask('prod', [
+        'less:dev'
+    ]);
 };
