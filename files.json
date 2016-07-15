@@ -11,6 +11,7 @@
     "app/app-service.js",
 
     "app/directives/header/header.js",
+    "app/directives/autofit/autofit.js",
 
     "app/modules/slideshow-list/slideshow-list.js",
     "app/modules/slideshow-list/slideshow-list-config.js",

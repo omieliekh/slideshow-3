@@ -1,11 +1,13 @@
 angular.module('slideshow', []).controller('slideshowController', [
     '$scope',
     '$stateParams',
+    '$window',
     'appService',
     'slideshowService',
 function (
     $scope,
     $stateParams,
+    $window,
     appService,
     slideshowService
 ) {
