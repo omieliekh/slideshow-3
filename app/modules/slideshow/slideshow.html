@@ -1,4 +1,13 @@
 <div class="slideshow">
+    <div class="dot-panel">
+        <div
+            class="dot"
+            ng-repeat="slide in slideList.slides"
+            ng-class="{'active': $index == activeImageIdx}"
+            ng-click="jumpToImage($index)"
+        ></div>
+    </div>
+
     <div
         autofit
         class="image-item"
@@ -8,7 +17,11 @@
             'background-image': 'url('+uploadedImagesPath + slide.image+')'
         }"
     >
-        <div class="image-text">{{slide.text}}</div>
+        <div
+            ng-if="slide.text"
+            class="image-text"
+        >{{slide.text}}</div>
+
         <div class="back-btn" ng-click="prevImage()"></div>
         <div class="forward-btn" ng-click="nextImage()"></div>
     </div>

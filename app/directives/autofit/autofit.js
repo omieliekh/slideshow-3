@@ -29,8 +29,6 @@ function(
                     imageText = element.find('.image-text')
                 }
 
-                console.log('imageText: ', imageText);
-
                 // we don't want to increase font size for wide screens,
                 // that's why we have different formulas for different screen orientations
                 if (width > height){

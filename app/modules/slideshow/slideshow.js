@@ -11,8 +11,6 @@ function (
     appService,
     slideshowService
 ) {
-    console.log('$stateParams: ', $stateParams);
-    
     $scope.stateParams = $stateParams;
     $scope.activeImageIdx = 0;
     $scope.uploadedImagesPath = appService.getUploadedImagesPath();
@@ -28,20 +26,24 @@ function (
         });
     };
 
+    $scope.jumpToImage = function (idx) {
+        $scope.activeImageIdx = idx;
+    };
+
     $scope.nextImage = function () {
         if ($scope.activeImageIdx + 1 <= $scope.slideList.slides.length - 1){
             $scope.activeImageIdx++;
+        } else {
+            $scope.activeImageIdx = 0;
         }
-
-        console.log('$scope.activeImageIdx: ', $scope.activeImageIdx);
     };
 
     $scope.prevImage = function () {
         if ($scope.activeImageIdx - 1 >= 0){
             $scope.activeImageIdx--;
+        } else if ($scope.slideList && $scope.slideList.slides) {
+            $scope.activeImageIdx = $scope.slideList.slides.length - 1;
         }
-
-        console.log('$scope.activeImageIdx: ', $scope.activeImageIdx);
     };
 
     initialize();
