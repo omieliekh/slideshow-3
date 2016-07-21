@@ -1,5 +1,28 @@
 <div class="modal-header">
-    <h3 class="modal-title">Gallery</h3>
+    <h3 class="modal-title">
+        Gallery
+
+        <button
+            class="btn btn-default"
+            ng-class="{'btn-primary': filter == 'today'}"
+            type="button"
+            ng-click="setImageFilter('today')"
+        >Today</button>
+
+        <button
+            class="btn btn-default"
+            ng-class="{'btn-primary': filter == 'yesterday'}"
+            type="button"
+            ng-click="setImageFilter('yesterday')"
+        >Yesterday</button>
+
+        <button
+            class="btn btn-default"
+            ng-class="{'btn-primary': filter == 'all'}"
+            type="button"
+            ng-click="setImageFilter('all')"
+        >All</button>
+    </h3>
 </div>
 <div class="modal-body gallery-modal">
     <i
@@ -13,15 +36,18 @@
     ></i>
 
     <div
-        ng-repeat="filename in files"
-        ng-click="selectFile(filename)"
+        ng-repeat="file in files"
+        ng-click="selectFile(file.filename)"
         ng-dblclick="choose()"
         class="gallery-item"
+
+        ng-if="isGalleryItemVisible(file)"
+
         ng-class="{
-            'framed': selectedFilename == filename
+            'framed': selectedFilename == file.filename
         }"
         ng-style="{
-            'background-image': 'url('+imagesPath + filename+')'
+            'background-image': 'url('+imagesPath + file.filename+')'
         }"
     ></div>
 </div>

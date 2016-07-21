@@ -3,6 +3,38 @@ var
     ROOT_DIR = __dirname + '/../',
     DEST_FOLDER = ROOT_DIR + 'images/uploaded/';
 
+function isDateToday(date){
+    var
+        now = new Date(),
+        targDate = new Date(date);
+
+    return (
+        now.getDate() == targDate.getDate() &&
+        now.getMonth() == targDate.getMonth() &&
+        now.getFullYear() == targDate.getFullYear()
+    );
+}
+
+function isDateYesterday(date){
+    var
+        yesterday,
+        targDate = new Date(date);
+
+    yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    console.log('==============================');
+    console.log('yesterday: ', yesterday);
+    console.log('targDate: ', targDate);
+    console.log('==============================');
+
+    return (
+        yesterday.getDate() == targDate.getDate() &&
+        yesterday.getMonth() == targDate.getMonth() &&
+        yesterday.getFullYear() == targDate.getFullYear()
+    );
+}
+
 module.exports = {
     '/images/upload': {
         'post': function (req, res) {
@@ -43,7 +75,15 @@ module.exports = {
                 if (err){
                     res.status(500).send(err);
                 } else {
-                    res.json(files);
+                    res.json(files.map(function (file) {
+                        var stats = fs.statSync(DEST_FOLDER + file);
+
+                        return {
+                            filename: file,
+                            isToday: isDateToday(stats.mtime),
+                            isYesterday: isDateYesterday(stats.mtime)
+                        };
+                    }));
                 }
             });
         }

@@ -18,6 +18,10 @@ function (
     $interpolate,
     config
 ) {
+    var
+        imageFilters = ['all', 'today', 'yesterday'],
+        imageFilter = imageFilters[0];
+
     this.getConfig = function (path) {
         return angular.deepClone( $parse(path)(config) );
     };
@@ -35,4 +39,17 @@ function (
             }
         });
     };
+
+    this.getImageFilter = function () {
+        return imageFilter;
+    };
+
+    this.setImageFilter = function (newImageFilter) {
+        newImageFilter = (imageFilters.indexOf(newImageFilter) != -1) ? newImageFilter : imageFilters[0];
+
+        imageFilter = newImageFilter;
+
+        return imageFilter;
+    };
+
 }]);
